@@ -1,0 +1,261 @@
+@import url("../../styles/var.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.header {
+  padding: var(--x-padding);
+  width: 100%;
+  height: 60px;
+  background-color: var(--primary-100);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header > * {
+  color: var(--primary-300);
+}
+
+.navBar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.search-bar {
+  height: 35px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.search-bar__input {
+  padding-left: 40px;
+  height: 100%;
+  width: 100%;
+  min-width: 200px;
+  display: flex;
+  outline: none;
+  border: 1px solid var(--primary-300);
+  color: #fff;
+  background-color: var(--primary-200);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.search-bar__icon {
+  font-size: 20px !important;
+  opacity: 0.8;
+  position: absolute;
+  left: 10px;
+  color: #fff;
+}
+
+
+.search-list {
+  max-height: 280px;
+  width: 100%;
+  background-color: var(--primary-100);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  border-radius: 5px;
+  border: 1px solid var(--primary-300);
+  overflow-y: auto;
+  z-index: 1;
+}
+
+
+@supports (scrollbar-color: var(--primary-300) var(--primary-100)) {
+  .search-list {
+    scrollbar-color: var(--primary-300) var(--primary-100);
+    scrollbar-width: thin;
+  }
+}
+
+.search-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.search-list::-webkit-scrollbar-track {
+  background-color: var(--primary-100);
+  border-radius: 10px;
+}
+
+.search-list::-webkit-scrollbar-thumb {
+  background-color: var(--accent-100);
+  border-radius: 10px;
+}
+
+.search-list__item {
+  width: 100%;
+}
+
+.search-list__link {
+  padding: 5px 10px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.search-list__text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+.search-list__link:hover {
+  background-color: var(--primary-200);
+}
+
+.menu {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  transition: left 0.5s;
+  z-index: 1;
+}
+
+.menu.show {
+  left: 0;
+  background-color: #0006;
+  transition: left 0.5s, background-color 0.5s 0.4s;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: var(--primary-100);
+}
+
+.menu__list-item {
+  color: var(--bg-100);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-item__name {
+  height: 100%;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--primary-300);
+}
+
+.menu__list-item:not(:last-child)::after {
+  content: "";
+  width: 80%;
+  height: 1px;
+  background-color: var(--accent-100);
+}
+
+.shopping-cart__icon{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.shopping-cart__icon:hover{
+  background-color: var(--primary-200);
+}
+
+.shopping-cart__count{
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-100);
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid var(--primary-100);
+  animation: grow-shrink 0.5s ease;
+}
+
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .navBar__menu-icon {
+    display: none;
+  }
+
+  .navBar {
+    height: 100%;
+  }
+
+  .menu {
+    width: fit-content;
+    position: static;
+  }
+
+  .menu__list {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu__list-item {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .menu__list-item:hover {
+    background-color: var(--primary-200);
+  }
+
+  .list-item__name {
+    padding: 0 10px;
+  }
+
+  .search-bar {
+    margin-left: auto;
+  }
+
+  .menu__list-item:not(:last-child)::after{
+    display: none;
+  }
+}

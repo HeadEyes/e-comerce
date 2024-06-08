@@ -1,0 +1,138 @@
+.main-product {
+  padding: var(--x-padding);
+  margin: 5dvh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-container {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.product-img {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.product-img > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.product-detail {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-info__title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.product-info__desc {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.product-info__price {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.product-add {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.product-add__quantity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-add__quantity > button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  background-color: var(--primary-100);
+  border: none;
+  color: var(--bg-100);
+}
+
+.product-add__cart-button {
+  height: 40px;
+  padding: 0 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  background-color: var(--primary-100);
+  border: none;
+  color: var(--bg-100);
+}
+
+.quantity {
+  width: 40px;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-container {
+    max-width: 1300px;
+    height: 500px;
+    flex-direction: row;
+  }
+
+  .product-img {
+    height: 100%;
+  }
+
+  .product-img > img {
+    height: 100%;
+  }
+  
+  .product-add {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  .product-add {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  
+}
