@@ -23,7 +23,7 @@ export const ProductList = () => {
                 <ul className='product-list'>
                     {loading ?
                         <Loader/> :
-                        filteredProduct?.slice(0, 10).map((product) => (
+                        filteredProduct?.map((product) => (
                             <ProductCard key={product.id} product={product} />
                         ))
                     }
