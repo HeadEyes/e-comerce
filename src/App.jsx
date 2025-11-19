@@ -26,7 +26,7 @@ function App() {
       element: <Layout />,
       children: [
         {
-          path: "/e-comerce",
+          path: "/",
           element: <Home />,
         },
         {

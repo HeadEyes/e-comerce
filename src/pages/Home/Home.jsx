@@ -2,8 +2,7 @@ import React from 'react'
 import './Home.css'
 import { Link } from 'react-router-dom'
 
-const img = "/e-comerce/banner.jpg"
-
+const img = "/assets/banner.jpg"
 
 export const Home = () => {
   return (
